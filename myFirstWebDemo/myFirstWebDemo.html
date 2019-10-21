@@ -137,6 +137,15 @@
 			// Actions
 			//
 
+			// 搜尋關鍵字
+			$("#searchForm").on("keyup", function() {
+				var value = $(this).val().toLowerCase();
+				$("#tableList *").filter(function() {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+				
+			});
+
 			// 全部清空重設，保留中控台pannel，其餘皆移除
 			$("#resetButton").click(function(){
 				$("#pannel").children().not("#centralConsole").remove();
