@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- for mobile device ux -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"> <!-- css resources -->
+	<script src="js/bootstrap.min.js"></script> 		 <!-- js resources -->
+	<style>
+
+		/*		*/
+		/*  id  */
+		/*		*/
+
+		#window {
+			background-color: #e6e6e6;
+			border-bottom: 	  thin solid #d9d9d9;
+		}
+		
+		#category {
+			background-color: #e6e6e6;
+			border-bottom: 	  thin solid #d9d9d9;
+			padding:  		  10px;
+			text-align: 	  center;
+		}
+
+		#categoryTime {
+			text-align: right;
+			font-size:  5px
+		}
+
+		#title {
+			background-color: #e6e6e6;
+			height: 		  600px;
+		}
+
+		#SplitLine {
+			border-right: 1px solid #d9d9d9
+		}
+
+		#resetButton  {
+			padding:  4px 16px;
+			cursor:   pointer;
+			margin:   8px;
+		}
+
+		#searchForm {
+			background-color   : white;
+			border             : 2px solid #ccc;
+			width              : 180%;
+			margin         	   : 8px;
+			border-radius      : 4px;
+			background-image   : url('http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/24/search-icon.png');
+			background-repeat  : no-repeat;
+			background-position: right;
+			/*position: relative;
+			left: 50%;*/
+		}
+
+		#changePage {
+			padding-top: 8px; 
+		}
+
+		#changePageDesc {
+			text-align: center;
+		}
+
+		#tableList {
+			background-color: white;
+			height: 	400px;
+			margin-top: 8px;
+		}
+
+		/*		   */
+		/*  Class  */
+		/*		   */
+
+		.itemUI {
+			border-right: 1px solid #d9d9d9;
+		}
+
+		.titleUI {
+			background-color: #005580;
+			color: 			  white;
+			font-size: 		  10px;
+			padding:   		  5px
+		}
+
+		.contactUI {
+			border: 	2px solid #d9d9d9;
+			text-align: center;
+		}
+
+		.changePageButtonUI {
+			border: 	2px solid #d9d9d9;
+			text-align: center;
+		}
+
+		.tableListUI {
+			border-bottom: 1px solid #d9d9d9;
+		}
+
+		.pannelUI {
+			background-color: #005580;
+			height: 		  100px;
+			margin: 		  10px;
+			color: 			  white;
+
+		}
+
+	</style>
+
+	<script>
+		$(document).ready(function(){
+
+			//
+			// Classes
+			//
+			
+			$("#categoryPhone").addClass('itemUI')
+			$("#categoryPtt").addClass('itemUI')
+			$("#categorySetting").addClass('itemUI')
+
+			$("#titleLeft").addClass('titleUI')
+			$("#titleRight").addClass('titleUI')
+
+			$("#contactPerson").addClass('contactUI')
+			$("#contactGroup").addClass('contactUI')
+
+			$("#changePageLeftButton").addClass('changePageButtonUI')
+			$("#changePageRightButton").addClass('changePageButtonUI')
+
+			$("#tableList").children().addClass('tableListUI')
+
+			$("#pannel").children().addClass("pannelUI")
+
+			//
+			// Actions
+			//
+
+			// 全部清空重設，保留中控台pannel，其餘皆移除
+			$("#resetButton").click(function(){
+				$("#pannel").children().not("#centralConsole").remove();
+			});	
+
+			// 移除pannel (x的父類別的父類別代表一個pannel)
+			$(document.body).on('click', '#removePannel', function(event) {
+				$(this).parent().parent().remove()
+			});			
+
+			// 分別建立 add1 ~ add4 按下+號的button click action
+			for(let index = 1; index < 5; index++){
+				// 依序執行id為 add1, add2, add3, add4
+				$("#add" + index).click(function() {
+					var img = $("<img id='removePannel' src='http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png'/>").attr({
+						"width": '20',
+						"height": '20'
+					});
+					var div 	  = $("<div></div>");		
+					var div_img   = $("<div></div>");
+					var div_title = $("<div></div>").text("醫護第" + index + "班");
+
+					div.addClass('col-3 pannelUI');
+					div_img.addClass('mr-auto');
+
+					div_img.append(img)
+
+					div.append(div_img);
+					div.append(div_title);
+
+					$("#pannel").append(div);
+				});
+			}
+
+		});
+	</script>
+	</head>
+
+</form>
+
+ <body>
+
+        <div class="container">
+
+            <!-- 視窗列 -->
+            <div id="window" class="row">
+
+                <div class="col-11"> </div>
+
+                <div class="col-1" style="text-align: right"> − □ ✕ </div>
+
+            </div>
+
+            <!-- 功能列 -->
+            <div id="category" class="row">
+
+                <div id="categoryPhone"   class="col-1"> 電話 </div>
+
+                <div id="categoryPtt"     class="col-1"> PTT </div>
+
+                <div id="categorySetting" class="col-1"> 設定 </div>
+
+                <div id="categoryTime"    class="col-9"> 2019-10-09 10:22:00 </div>
+
+            </div>
+
+            <!-- 內容列 -->
+            <div id="title" class="row">
+
+                <!-- 左半部 -->
+                <div id="SplitLine" class="col-md-8">
+
+                    <div id="titleLeft" class="row"> PTT廣播 </div>
+
+                    <div id="reset" class="row">
+
+                        <div class="ml-auto">
+
+                            <button id="resetButton"> 重設 </button>
+
+                        </div>
+                    </div>
+
+                    <div id="pannelCenter" class="container">
+
+                        <div id="pannel" class="row justify-content-start">
+
+                            <div id="centralConsole" class="col-3">
+                            	中控台
+                        	</div>
+                            <div class="col-3"> 
+                            	<div class="mr-auto">
+                                	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
+                            	</div>
+                            	<div>
+                            		col 1
+                            	</div>
+                            </div>
+                            <div class="col-3"> 
+                            	<div class="mr-auto">
+                                	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
+                            	</div>
+                            	<div>
+                            		col 2
+                            	</div>
+                            </div>
+
+                            <!-- <div class="w-100"></div> -->
+                            <div class="col-3"> 
+                            	<div class="mr-auto">
+                                	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
+                            	</div>
+                            	<div>
+                            		col 3
+                            	</div>
+                            </div>
+                            <div class="col-3"> 
+                            	<div class="mr-auto">
+                                	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
+                            	</div>
+                            	<div>
+                            		col 4
+                            	</div>
+                            </div>
+                            <div class="col-3"> 
+                            	<div class="mr-auto">
+                                	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
+                            	</div>
+                            	<div>
+                            		col 5
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 右半部 -->
+                <div class="col-md-4">
+
+                    <div id="titleRight" class="row"> 無線電通訊錄 </div>
+
+                    <div class="row">
+
+                        <form>
+
+                            <input id="searchForm" type="text" name="search" placeholder="Search..">
+
+                        </form>
+                    </div>
+
+                   <div id="contact" class="row justify-content-center">
+
+                        <div id="contactPerson" class="col-5"> 聯絡人 </div>
+
+                        <div id="contactGroup" class="col-5"> 群組 </div>
+
+                    </div>
+
+                    <div id="changePage" class="row justify-content-end">
+
+                        <div id="changePageDesc" class="col-3"> 1/1 - 1 </div>
+
+                        <div class="col-3">
+
+                            <div class="row justify-content-center">
+
+                                <div class="col-1"> 
+
+                                    <button> < </button> 
+
+                                </div>
+
+                                <div  class="col-1"> 
+
+                                    <button> > </button> 
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tableList" class="container">
+
+                        <div class="row">
+
+                            <div class="col-md-11" style="padding: 8px"> 醫護第1班 </div>
+
+                            <div class="col-md-1 ml-auto" style="padding: 8px">
+
+                                <button id="add1"> + </button> 
+
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-11" style="padding: 8px"> 醫護第2班 </div>
+
+                            <div class="col-md-1 ml-auto" style="padding: 8px">
+
+                                <button id="add2"> + </button> 
+
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-11" style="padding: 8px"> 醫護第3班 </div>
+
+                            <div class="col-md-1 ml-auto" style="padding: 8px">
+
+                                <button id="add3"> + </button> 
+
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-11" style="padding: 8px"> 醫護第4班 </div>
+
+                            <div class="col-md-1 ml-auto" style="padding: 8px">
+
+                                <button id="add4"> + </button> 
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
+
