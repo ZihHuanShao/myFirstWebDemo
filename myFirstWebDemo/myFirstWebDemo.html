@@ -95,7 +95,11 @@
 			text-align: center;
 		}
 
-		.tableListUI {
+		.tableListItemUI {
+			padding: 8px;
+		}
+
+		.tableListItemBottomUI {
 			border-bottom: 1px solid #d9d9d9;
 		}
 
@@ -129,7 +133,8 @@
 			$("#changePageLeftButton").addClass('changePageButtonUI')
 			$("#changePageRightButton").addClass('changePageButtonUI')
 
-			$("#tableList").children().addClass('tableListUI')
+			$("#tableList").children().addClass('tableListItemBottomUI')
+			$("#tableList").children().children().addClass('tableListItemUI')
 
 			$("#pannel").children().addClass("pannelUI")
 
@@ -331,9 +336,9 @@
 
                         <div class="row">
 
-                            <div class="col-md-11" style="padding: 8px"> 醫護第1班 </div>
+                            <div class="col-md-11"> 醫護第1班 </div>
 
-                            <div class="col-md-1 ml-auto" style="padding: 8px">
+                            <div class="col-md-1 ml-auto">
 
                                 <button id="add1"> + </button> 
 
@@ -341,9 +346,9 @@
                         </div>
                         <div class="row">
 
-                            <div class="col-md-11" style="padding: 8px"> 醫護第2班 </div>
+                            <div class="col-md-11"> 醫護第2班 </div>
 
-                            <div class="col-md-1 ml-auto" style="padding: 8px">
+                            <div class="col-md-1 ml-auto">
 
                                 <button id="add2"> + </button> 
 
@@ -351,9 +356,9 @@
                         </div>
                         <div class="row">
 
-                            <div class="col-md-11" style="padding: 8px"> 醫護第3班 </div>
+                            <div class="col-md-11"> 醫護第3班 </div>
 
-                            <div class="col-md-1 ml-auto" style="padding: 8px">
+                            <div class="col-md-1 ml-auto">
 
                                 <button id="add3"> + </button> 
 
@@ -361,9 +366,9 @@
                         </div>
                         <div class="row">
 
-                            <div class="col-md-11" style="padding: 8px"> 醫護第4班 </div>
+                            <div class="col-md-11"> 醫護第4班 </div>
 
-                            <div class="col-md-1 ml-auto" style="padding: 8px">
+                            <div class="col-md-1 ml-auto">
 
                                 <button id="add4"> + </button> 
 
