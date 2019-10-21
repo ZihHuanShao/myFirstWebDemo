@@ -157,7 +157,7 @@
 			});	
 
 			// 移除pannel (x的父類別的父類別代表一個pannel)
-			$(document.body).on('click', '#removePannel', function(event) {
+			$(document.body).on('click', '.removePannel', function(event) {
 				$(this).parent().parent().remove()
 			});			
 
@@ -165,7 +165,7 @@
 			for(let index = 1; index < 4; index++){
 				// 依序執行id為 default_add1, default_add2, default_add3
 				$("#default_add" + index).click(function() {
-					var img = $("<img id='removePannel' src='http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png'/>").attr({
+					var img = $("<img class='removePannel' src='http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png'/>").attr({
 						"width": '20',
 						"height": '20'
 					});
@@ -189,7 +189,7 @@
 			for(let index = 1; index < 5; index++){
 				// 依序執行id為 add1, add2, add3, add4
 				$("#add" + index).click(function() {
-					var img = $("<img id='removePannel' src='http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png'/>").attr({
+					var img = $("<img class='removePannel' src='http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png'/>").attr({
 						"width": '20',
 						"height": '20'
 					});
@@ -267,7 +267,7 @@
                         	</div>
                             <div class="col-3"> 
                             	<div class="mr-auto">
-                                	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
+                                	<img id="default_1" class='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
                             	</div>
                             	<div>
                             		default 1
@@ -275,7 +275,7 @@
                             </div>
                             <div class="col-3"> 
                             	<div class="mr-auto">
-                                	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
+                                	<img id="default_2" class='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
                             	</div>
                             	<div>
                             		default 2
@@ -285,7 +285,7 @@
                             <!-- <div class="w-100"></div> -->
                             <div class="col-3"> 
                             	<div class="mr-auto">
-                                	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
+                                	<img id="default_3" class='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
                             	</div>
                             	<div>
                             		default 3
@@ -344,7 +344,7 @@
 
                     	<div class="row">
 
-                            <div class="col-md-11"> default 1 </div>
+                            <div id="default_1" class="col-md-11"> default 1 </div>
 
                             <div class="col-md-1 ml-auto">
 
@@ -354,7 +354,7 @@
                         </div>
                         <div class="row">
 
-                            <div class="col-md-11"> default 2 </div>
+                            <div id="default_2" class="col-md-11"> default 2 </div>
 
                             <div class="col-md-1 ml-auto">
 
@@ -364,7 +364,7 @@
                         </div>
                         <div class="row">
 
-                            <div class="col-md-11"> default 3 </div>
+                            <div id="default_3" class="col-md-11"> default 3 </div>
 
                             <div class="col-md-1 ml-auto">
 
@@ -374,7 +374,7 @@
                         </div>
                         <div class="row">
 
-                            <div class="col-md-11"> 醫護第1班 </div>
+                            <div id="medic_1" class="col-md-11"> 醫護第1班 </div>
 
                             <div class="col-md-1 ml-auto">
 
@@ -384,7 +384,7 @@
                         </div>
                         <div class="row">
 
-                            <div class="col-md-11"> 醫護第2班 </div>
+                            <div id="medic_2" class="col-md-11"> 醫護第2班 </div>
 
                             <div class="col-md-1 ml-auto">
 
@@ -394,7 +394,7 @@
                         </div>
                         <div class="row">
 
-                            <div class="col-md-11"> 醫護第3班 </div>
+                            <div id="medic_3" class="col-md-11"> 醫護第3班 </div>
 
                             <div class="col-md-1 ml-auto">
 
@@ -404,7 +404,7 @@
                         </div>
                         <div class="row">
 
-                            <div class="col-md-11"> 醫護第4班 </div>
+                            <div id="medic_4" class="col-md-11"> 醫護第4班 </div>
 
                             <div class="col-md-1 ml-auto">
 
