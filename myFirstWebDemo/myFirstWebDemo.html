@@ -161,6 +161,30 @@
 				$(this).parent().parent().remove()
 			});			
 
+			// 分別建立 default_add1 ~ default_add3 按下+號的button click action
+			for(let index = 1; index < 4; index++){
+				// 依序執行id為 default_add1, default_add2, default_add3
+				$("#default_add" + index).click(function() {
+					var img = $("<img id='removePannel' src='http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png'/>").attr({
+						"width": '20',
+						"height": '20'
+					});
+					var div 	  = $("<div></div>");		
+					var div_img   = $("<div></div>");
+					var div_title = $("<div></div>").text("default" + index);
+
+					div.addClass('col-3 pannelUI');
+					div_img.addClass('mr-auto');
+
+					div_img.append(img)
+
+					div.append(div_img);
+					div.append(div_title);
+
+					$("#pannel").append(div);
+				});
+			}
+
 			// 分別建立 add1 ~ add4 按下+號的button click action
 			for(let index = 1; index < 5; index++){
 				// 依序執行id為 add1, add2, add3, add4
@@ -246,7 +270,7 @@
                                 	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
                             	</div>
                             	<div>
-                            		col 1
+                            		default 1
                             	</div>
                             </div>
                             <div class="col-3"> 
@@ -254,7 +278,7 @@
                                 	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
                             	</div>
                             	<div>
-                            		col 2
+                            		default 2
                             	</div>
                             </div>
 
@@ -264,23 +288,7 @@
                                 	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
                             	</div>
                             	<div>
-                            		col 3
-                            	</div>
-                            </div>
-                            <div class="col-3"> 
-                            	<div class="mr-auto">
-                                	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
-                            	</div>
-                            	<div>
-                            		col 4
-                            	</div>
-                            </div>
-                            <div class="col-3"> 
-                            	<div class="mr-auto">
-                                	<img id='removePannel' src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/16/Windows-Close-Program-icon.png" alt="Close pannel" width="20" height="20">
-                            	</div>
-                            	<div>
-                            		col 5
+                            		default 3
                             	</div>
                             </div>
                         </div>
@@ -334,6 +342,36 @@
 
                     <div id="tableList" class="container">
 
+                    	<div class="row">
+
+                            <div class="col-md-11"> default 1 </div>
+
+                            <div class="col-md-1 ml-auto">
+
+                                <button id="default_add1"> + </button> 
+
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-11"> default 2 </div>
+
+                            <div class="col-md-1 ml-auto">
+
+                                <button id="default_add2"> + </button> 
+
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-11"> default 3 </div>
+
+                            <div class="col-md-1 ml-auto">
+
+                                <button id="default_add3"> + </button> 
+
+                            </div>
+                        </div>
                         <div class="row">
 
                             <div class="col-md-11"> 醫護第1班 </div>
